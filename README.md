@@ -279,15 +279,15 @@ Below are selected demonstrations of the completed challenges.
 
 ### 🎬 Demonstration 1
 
-**[Add your first YouTube/Google Drive video link here]**
+https://youtu.be/HePDO0JEnh0?si=WQ7WkmrrGEk9Cp4F
 
-> Brief description: Demonstration of [Mission Name] showing the drone responding to real-time computer vision input.
+> Brief description: Demonstration of [Mission 4] showing the drone responding to real-time computer vision input.
 
 ### 🎬 Demonstration 2
 
-**[Add your second YouTube/Google Drive video link here]**
+https://youtu.be/ReEW46AyqsY?si=IwFj9AEdOM0z2n_-
 
-> Brief description: Demonstration of [Mission Name] showing vision-based drone control and navigation.
+> Brief description: Demonstration of [Mission 5] showing vision-based drone control and navigation.
 
 ---
 
