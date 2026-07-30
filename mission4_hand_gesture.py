@@ -7,17 +7,12 @@ from mediapipe.tasks.python import vision
 from pysimverse import Drone
 import time
 
-# ============================================================
 # MISSION 3 - HAND LEFT / RIGHT DETECTION & DRONE CONTROL
-# ============================================================
-
 print("=" * 60)
 print("MISSION 3 - HAND LEFT / RIGHT DETECTION & DRONE CONTROL")
 print("=" * 60)
 
-# ============================================================
 # FIND PROJECT PATH AND MODEL
-# ============================================================
 PROJECT_ROOT = Path(__file__).resolve().parent
 MODEL_PATH = PROJECT_ROOT / "hand_landmarker.task"
 
@@ -27,9 +22,7 @@ if not MODEL_PATH.exists():
 
 print(f"Looking for MediaPipe model at: {MODEL_PATH}")
 
-# ============================================================
 # CHECK IF MODEL EXISTS
-# ============================================================
 if not MODEL_PATH.exists():
     print("ERROR: hand_landmarker.task was not found!")
     print(f"Expected location: {MODEL_PATH}")
@@ -42,9 +35,7 @@ if model_size == 0:
     print("ERROR: The model file is empty!")
     exit()
 
-# ============================================================
 # CREATE MEDIAPIPE HAND LANDMARKER
-# ============================================================
 print("Loading MediaPipe Hand Landmarker...")
 
 base_options = python.BaseOptions(
@@ -69,9 +60,8 @@ except Exception as e:
 print("MediaPipe Hand Landmarker loaded successfully!")
 print()
 
-# ============================================================
+
 # INITIALIZE AND CONNECT DRONE
-# ============================================================
 print("Connecting to drone...")
 drone = Drone()
 drone.connect()
@@ -83,9 +73,8 @@ time.sleep(1)
 
 SPEED = 30
 
-# ============================================================
+
 # MISSION INSTRUCTIONS
-# ============================================================
 print("=" * 60)
 print("MISSION 3 CONTROLS")
 print("=" * 60)
@@ -97,9 +86,7 @@ print("Press Q in the window to quit.")
 print("=" * 60)
 print()
 
-# ============================================================
 # OPEN WEBCAM
-# ============================================================
 cap = cv2.VideoCapture(0)
 
 if not cap.isOpened():
@@ -118,9 +105,8 @@ print()
 # Keep track of the last printed direction to avoid spamming the console
 last_printed_direction = None
 
-# ============================================================
+
 # MAIN LOOP
-# ============================================================
 try:
     while True:
         success, frame = cap.read()
@@ -132,9 +118,7 @@ try:
         frame = cv2.flip(frame, 1)
         height, width, _ = frame.shape
 
-        # ========================================================
         # CREATE LEFT / DEADZONE / RIGHT AREAS
-        # ========================================================
         # Left boundary: 35% of width
         # Right boundary: 65% of width
         # Deadzone is in the center (35% to 65%)
